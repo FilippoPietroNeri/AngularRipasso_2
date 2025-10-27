@@ -1,0 +1,8 @@
+<div style="border:2px dashed #1e90ff; padding:12px; margin:12px 0;">
+   <div style="margin-top: 15px;">
+        <b>Nome: {{nome}}</b>
+        <p>Classe: {{classe}}</p>
+        <p *ngIf="isShownMediaVoti">Media Voti: {{mediaVoti}}</p>
+        <button (click)="showMediaVoti()">Mostra Media Voti</button>
+   </div>
+</div>
