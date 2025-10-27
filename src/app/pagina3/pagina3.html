@@ -1,6 +1,11 @@
-<app-studente
-    *ngFor="let s of studenti"
-    [nome]="s.nome"
-    [classe]="s.classe"
-    [mediaVoti]="s.mediaVoti">
-</app-studente>
+<div class="container mt-4">
+  <h2>Lista Studenti</h2>
+  <div class="row">
+    <app-studente
+      *ngFor="let s of studenti"
+      [nome]="s.nome"
+      [classe]="s.classe"
+      [mediaVoti]="s.mediaVoti">
+    </app-studente>
+  </div>
+</div>

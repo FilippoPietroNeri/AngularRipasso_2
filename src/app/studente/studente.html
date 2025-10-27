@@ -1,8 +1,33 @@
-<div style="border:2px dashed #1e90ff; padding:12px; margin:12px 0;">
-   <div style="margin-top: 15px;">
-        <b>Nome: {{nome}}</b>
-        <p>Classe: {{classe}}</p>
-        <p *ngIf="isShownMediaVoti">Media Voti: {{mediaVoti}}</p>
-        <button (click)="showMediaVoti()">Mostra Media Voti</button>
-   </div>
+<div class="card shadow-sm mb-3 border-primary">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-start mb-3">
+      <div>
+        <h5 class="card-title text-primary mb-1">{{nome}}</h5>
+        <p class="text-muted mb-0">
+          <i class="bi bi-book"></i> Classe: <span class="badge bg-secondary">{{classe}}</span>
+        </p>
+      </div>
+      <span class="badge bg-primary rounded-pill" *ngIf="isShownMediaVoti">
+        {{mediaVoti}}/10
+      </span>
+    </div>
+    
+    <div *ngIf="isShownMediaVoti" class="alert alert-info mb-3" role="alert">
+      <strong>Media Voti:</strong> {{mediaVoti}}
+      <div class="progress mt-2" style="height: 8px;">
+        <div class="progress-bar" [class.bg-success]="mediaVoti >= 7" 
+             [class.bg-warning]="mediaVoti >= 6 && mediaVoti < 7"
+             [class.bg-danger]="mediaVoti < 6"
+             [style.width.%]="mediaVoti * 10">
+        </div>
+      </div>
+    </div>
+    
+    <button class="btn btn-primary btn-sm w-100" (click)="showMediaVoti()" *ngIf="!isShownMediaVoti">
+      <i class="bi bi-eye"></i> Mostra Media Voti
+    </button>
+    <button class="btn btn-outline-secondary btn-sm w-100" (click)="showMediaVoti()" *ngIf="isShownMediaVoti">
+      <i class="bi bi-eye-slash"></i> Nascondi Media Voti
+    </button>
+  </div>
 </div>
