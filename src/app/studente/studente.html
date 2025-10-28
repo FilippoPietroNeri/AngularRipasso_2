@@ -23,15 +23,19 @@
       </div>
     </div>
     
-    <button class="btn btn-primary btn-sm w-20 m-2" (click)="showMediaVoti()" *ngIf="!isShownMediaVoti">
-      <i class="bi bi-eye"></i> Mostra Media Voti
-    </button>
-    <button class="btn btn-outline-secondary btn-sm w-20 m-2" (click)="showMediaVoti()" *ngIf="isShownMediaVoti">
-      <i class="bi bi-eye-slash"></i> Nascondi Media Voti
-    </button>
-
-    <button class="btn btn-danger btn-sm w-20" (click)="rimuoviStudente(id)">
-      <i class="bi bi-eye-slash"></i> Rimuovi Studente 
-    </button>
+    <div class="d-flex flex-wrap gap-2">
+      <button class="btn btn-primary btn-sm" (click)="showMediaVoti()" *ngIf="!isShownMediaVoti">
+        <i class="bi bi-eye"></i> Mostra Media
+      </button>
+      <button class="btn btn-outline-secondary btn-sm" (click)="showMediaVoti()" *ngIf="isShownMediaVoti">
+        <i class="bi bi-eye-slash"></i> Nascondi Media
+      </button>
+      <button class="btn btn-danger btn-sm" (click)="rimuoviStudente(id)">
+        <i class="bi bi-trash"></i> Rimuovi
+      </button>
+      <button class="btn btn-info btn-sm" [routerLink]="['/pagina3', studenteId]">
+        <i class="bi bi-info-circle"></i> Dettaglio
+      </button>
+    </div>
   </div>
 </div>

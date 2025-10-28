@@ -4,6 +4,7 @@
     <app-studente
       *ngFor="let s of studenti; let i = index"
       [id]="i"
+      [studenteId] = "s.id"
       [nome]="s.nome"
       [classe]="s.classe"
       [mediaVoti]="s.mediaVoti">
