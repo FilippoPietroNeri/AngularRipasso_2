@@ -23,11 +23,15 @@
       </div>
     </div>
     
-    <button class="btn btn-primary btn-sm w-100" (click)="showMediaVoti()" *ngIf="!isShownMediaVoti">
+    <button class="btn btn-primary btn-sm w-20 m-2" (click)="showMediaVoti()" *ngIf="!isShownMediaVoti">
       <i class="bi bi-eye"></i> Mostra Media Voti
     </button>
-    <button class="btn btn-outline-secondary btn-sm w-100" (click)="showMediaVoti()" *ngIf="isShownMediaVoti">
+    <button class="btn btn-outline-secondary btn-sm w-20 m-2" (click)="showMediaVoti()" *ngIf="isShownMediaVoti">
       <i class="bi bi-eye-slash"></i> Nascondi Media Voti
+    </button>
+
+    <button class="btn btn-danger btn-sm w-20" (click)="rimuoviStudente(id)">
+      <i class="bi bi-eye-slash"></i> Rimuovi Studente 
     </button>
   </div>
 </div>

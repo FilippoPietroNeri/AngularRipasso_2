@@ -2,7 +2,8 @@
   <h2>Lista Studenti</h2>
   <div class="row">
     <app-studente
-      *ngFor="let s of studenti"
+      *ngFor="let s of studenti; let i = index"
+      [id]="i"
       [nome]="s.nome"
       [classe]="s.classe"
       [mediaVoti]="s.mediaVoti">
